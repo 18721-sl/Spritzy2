@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .tablec {
+            position: absolute;
+            margin-left: 530px;
+            margin-top: 240px;
+            font: 400 24px/30px arial;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 30px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            float: right;
+            padding: 12px 20px;
+            width: 50%;
+            border: black;
+            font: 400 24px/30px arial;
+        }
+
+        input[type=button] {
+            width: 48%;
+            margin: 8px 0;
+            border: none;
+            color: rgb(35, 117, 184);
+            background-color: #d4ecd4;
+            font: 400 15px/30px arial;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+
+
+        img {
+            height: 150px;
+            position: absolute;
+            margin-left: 570px;
+            margin-top: 50px;
+        }
+
+        body {
+            background-color: #d4ecd4;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: Lucida Console;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 570px;
+        }
+
+        .flash {
+            width: 100%;
+            border: none;
+            font: 400 15px/30px arial;
+            height: 10px;
+            background-color: #d4ecd4;
+            color: blue;
+            margin-top: 0px;
+            text-align: left;
+        }
+    </style>
+
+
+<body>
+    <h1 class='center'> Sign in </h1>
+    <div><img src="{{url_for('static', filename='images/New logo spritzy transparent.png')}}"> </div>
+    <div>
+        <form class='tablec' action='login' method='POST'>
+            <label for="email"> email:</label><br>
+            <input class='center' type="text" id="email" name="email" required><br>
+            <label for="password">password:</label><br>
+            <input class='center' type="password" id="password" name="password" required><br><br>
+            {% for message in get_flashed_messages() %}
+            <input class='flash' type='box' id='password' name='flash' value="{{ message }}" readonly><br>
+            {% endfor %}
+            <input class='right' type="submit" value="Sign in">
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-family: Lucida Console;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 450px;
+        }
+
+        body {
+            background-color: #d4ecd4;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        img {
+            height: 150px;
+            position: absolute;
+            margin-left: 570px;
+            margin-top: 50px;
+        }
+
+        .link {
+            position: absolute;
+            margin-left: 670px;
+            margin-top: 300px;
+            font: 400 28px/30px Lucida Console;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1> Successfully ordered! </h1>
+    <div><img src="{{url_for('static', filename='images/New logo spritzy transparent.png')}}" /></div>
+    <a class="link" href="/">Back to Main page</a>
+</body>
+
+</html>

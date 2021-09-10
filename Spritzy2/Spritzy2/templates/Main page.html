@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Main page</title>
+    <style>
+        body {
+            background-color: #d4ecd4;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .logo {
+            height: 220px;
+            position: absolute;
+            margin-left: 60px;
+
+        }
+
+        .logoo {
+            float: left;
+            width: 30%;
+            height: 200px;
+            padding: 20px;
+        }
+
+        table {
+            width: 70%;
+            height: 200px;
+        }
+
+        .headbar {
+            font: 400 38px/30px Lucida Console;
+
+        }
+
+        .headbar>img {
+            width: 250px;
+            margin: 7px;
+        }
+
+        .headbar>div {
+            margin: 5px;
+            text-align: center;
+        }
+
+        h4 {
+            font: 400 38px/30px cursive;
+            text-align: center;
+            color: burlywood;
+        }
+
+        .bottle {
+            height: 440px;
+            position: absolute;
+            margin-left: 40px;
+        }
+
+        .introduction {
+            font: 400 18px/40px Monospace;
+            text-indent: 40px;
+        }
+
+        .container {
+            flex: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .social {
+            position: absolute;
+            margin-left: 800px;
+            font: 400 22px/40px Monospace;
+            text-indent: 40px;
+            color: brown;
+        }
+
+        .sign {
+            position: absolute;
+            margin-left: 105px;
+            margin-top: 230px;
+            font: 400 28px/30px Lucida Console;
+            color: rgb(101, 93, 212);
+            text-decoration: none;
+        }
+
+        .email {
+            position: absolute;
+            margin-left: 65px;
+            margin-top: 280px;
+            font: 400 12px/30px Lucida Console;
+            color: rgb(101, 93, 212);
+            text-decoration: none;
+        }
+
+        .logout {
+            position: absolute;
+            margin-left: 105px;
+            margin-top: 320px;
+            font: 400 12px/30px Lucida Console;
+            color: rgb(101, 93, 212);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<section>
+    <div class='logoo'>
+        <img src='static/images/New logo spritzy transparent.png' class='logo'>
+        <a class='sign' href=" {{url_for('index')}} "> Sign up </a>
+        <div class='email'>logged in as {{session["email"]}}</div>
+    </div>
+    <article>
+        <div class=' container '>
+            {% for item in items %}
+
+            <div class="headbar">
+                <div>
+                    <a href="{{url_for('scent',id=item.item_id)}}">{{item.scent}}</a>
+                </div>
+                <img src="static/images/{{(item.bottle)}}">
+            </div>
+
+            {% endfor %}
+    </article>
+</section>
+
+<body>
+    <section>
+        <div class='logoo'>
+            <img src="{{url_for('static', filename='images/IMG_8138.jpg')}}" class='bottle' />
+        </div>
+        <article>
+            <h4> Portable & affordable </h4>
+            <h4> Scented & Fragrant </h4>
+            <p class='introduction'>
+                At Spritzy we are providing very moisturizing and great scented hand sanitizers that are small and
+                portable when on the go. We are trying to increase the use of hand sanitizers to stay clean and safe
+                during the pandemic that is
+                still ongoing.
+            </p>
+            <div class='social'>
+                TikTok: @spritzysmallbusiness<br>
+                Instagram: @spritzysmallbusiness
+            </div>
+        </article>
+    </section>
+
+
+</body>
+
+</html>

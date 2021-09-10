@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Grape Fruit</title>
+    <style>
+        body {
+            background-image: url('static/images/1582152317-screen-shot-2020-02-19-at-5-41-46-pm-1582152301.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover; 
+        }
+        .logo{
+            height: 220px;
+            position: absolute;
+            margin-left: 60px;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 200px; 
+            padding: 20px;
+        }
+        .head{
+            width: 70%;
+            height: 200px
+        }
+        .header{
+            font: 400 38px/30px Lucida Console;
+        }
+        .pic{
+            height: 200px;
+        }
+
+        .items{
+            text-align: center;
+            width: 100%;
+            
+        }
+
+        .bar{
+            height: 100px;
+        }
+    </style>
+</head>
+
+<section>
+    <nav>
+        <img src='static/images/New logo spritzy transparent.png' class='logo'>
+    </nav>
+    <article>
+        <table class='head'>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <td class='header'><a href="{{url_for('lavender')}}">Lavender</td>
+            <td class='header'><a href="{{url_for('rose')}}">Rose</td>
+            <td class='header'><a href="{{url_for('lemon')}}">Lemon</td>
+            <td class='header'>Grape Fruit</td>
+        </table>
+    </article>
+</section>
+
+<body>
+    <section class='bar'></section>
+    
+    <aside>
+        <table class='items'>
+            <tr> 
+                <th> <a href= {{ url_for('index') }}> <img src='static/images/blank pic.png' class='pic'> </th> 
+                <th> <a href= {{ url_for('index') }}> <img src='static/images/blank pic.png' class='pic'> </th> 
+                <th> <a href= {{ url_for('index') }}> <img src='static/images/blank pic.png' class='pic'> </th> 
+                <th> <a href= {{ url_for('index') }}> <img src='static/images/blank pic.png' class='pic'> </th> 
+            </tr>
+            <td> 10ml </td>
+            <td> 20ml </td>
+            <td> 50ml </td>
+            <td> 100ml </td>
+        </table>
+    </aside>
+
+</body>

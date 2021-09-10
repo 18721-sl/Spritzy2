@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Lavender</title>
+    <style>
+        body {
+            background-color: #d4ecd4;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        .logo {
+            height: 150px;
+            position: absolute;
+            margin-left: 570px;
+            margin-top: 50px;
+        }
+
+        .pic {
+            height: 200px;
+        }
+
+        .items {
+            text-align: center;
+            width: 100%;
+            height: 200px;
+        }
+
+        .bar {
+            height: 100px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Lucida Console;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 500px;
+        }
+
+        .order {
+            position: absolute;
+            margin-left: 480px;
+            margin-top: 200px;
+            font: 400 24px/30px arial;
+        }
+
+        input[type=text] {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid burlywood;
+            border-radius: 4px;
+        }
+
+        input[type=button] {
+            width: 40%;
+            margin: 8px 0;
+            border: none;
+            color: rgb(35, 117, 184);
+            background-color: #d4ecd4;
+        }
+
+        input[type=submit] {
+            float: right;
+            padding: 7px 30px;
+        }
+
+        input[type=number] {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid burlywood;
+            border-radius: 4px;
+        }
+
+        input[type=radio] {
+            margin-left: 30px;
+        }
+
+        .sample {
+            width: 300px;
+            position: absolute;
+            margin-top: 200px;
+            margin-left: 151px;
+        }
+    </style>
+</head>
+
+<section>
+    <div>
+        <a href="{{ url_for('home') }}">
+            <img class='sample' src="{{url_for('static',filename='images')}}/{{result.bottle}}">
+        </a>
+    </div>
+    <form class='order' action="/add" method='POST' name='order'>
+        <label for="Flavor">Flavor:</label>
+        <input type="text" id='Flavor' name='flavor' value='{{result.scent}}' readonly><br>
+        <label for="Bottle">Bottle: </label>
+        <input type="radio" id="Bottle" name="bottle" value="60ml">
+        <label for="bottle">60ml</label>
+        <input type="radio" id="bottle" name="bottle" value="100ml">
+        <label for="bottle">100ml</label><br>
+        <label for="Ammount">Amount :</label>
+        <input type="number" id="Ammount" name="ammount" min="1" max="10" required><br>
+        <label for="Contact">Contact:</label>
+        <input type='text' id='Contact' name='contact' placeholder="phone number" required><br>
+        <input type='submit' id='order' name='order' value='order'>
+
+    </form>
+</section>
+
+<body>
+    <a href="{{ url_for('home') }}">
+        <div><img class='logo' src=" {{url_for('static', filename='images/New logo spritzy transparent.png' )}}"> </div>
+    </a>
+    <h1 class='center'>Make your Order </h1>
+
+    <section class='bar'></section>
+
+    <aside></aside>
+    </aside>
+
+</body>
